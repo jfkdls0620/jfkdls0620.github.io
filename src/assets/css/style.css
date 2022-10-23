@@ -1,0 +1,183 @@
+#app{width:100%;height: 100%;}
+#container{position:relative;width:100%;height:100%;background-image: url("../background.jpg");background-repeat: no-repeat;background-position: center;background-size: cover;}
+#container .doc-wrap{position:absolute;
+    bottom:20px;
+    left:50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;}
+
+#container .doc-wrap .doc-wrap-inner ul{
+    position:relative;
+    padding: 3px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: rgba(83, 83, 83, 0.25);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#container .doc-wrap .doc-wrap-inner ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    vertical-align: bottom;
+    transition: 0.2s;
+    transform-origin: 50% 100%;
+}
+#container .doc-wrap .doc-wrap-inner ul li .name{
+    position: absolute;
+    top: -70px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    height: 10px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    visibility: hidden;
+}
+#container .doc-wrap .doc-wrap-inner ul li .ico{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+/*#container .doc-wrap .doc-wrap-inner ul li:hover{margin: 0 13px 0 13px;}*/
+#container .doc-wrap .doc-wrap-inner ul li:hover .ico{margin-top: -20px}
+
+.sub-wrap{
+    position:absolute;
+    width: 960px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.sub-wrap .outer{
+    background: #b4b4b4;
+    opacity: 0.9;
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px 7px 0 0;
+    border: 1px solid #d8d8d8;
+    border-bottom: 1px solid #b4b4b4;
+}
+.sub-wrap .outer .dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #f9f9f9;
+    border-radius: 50%;
+    margin: 0 4px 0 0;
+}
+.sub-wrap .outer .dot.red {
+     background: #FF6057;
+     border: 1px solid #E14640;
+ }
+
+.sub-wrap .outer .dot.amber {
+     background: #FFBD2E;
+     border: 1px solid #DFA123;
+ }
+
+.sub-wrap .outer .dot.green {
+     background: #27C93F;
+     border: 1px solid #1DAD2B;
+ }
+
+.sub-wrap .content{
+    background: #b4b4b4;
+    padding: 10px;
+}
+
+.sub-wrap .content h2{
+    font-size:20px;
+}
+
+.sub-wrap .content ul{
+    margin-top: 20px;
+}
+.sub-wrap .content ul li.career-list{
+    text-align: center;
+    display: inline-block;
+    width:24%;
+    margin:0 1% 10px 0;
+    background-color: #fff;
+    vertical-align: top;
+    min-height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position:relative;
+    color:#fff;
+}
+
+.sub-wrap .content ul li.career-list .career-list-inner{
+    position:relative;
+    width: 100%;
+    height: 225px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.sub-wrap .content ul li.career-list:hover .career-list-inner{
+    opacity: 1;
+    background-color: rgba(51,51,51,.6);
+}
+.sub-wrap .content ul li.career-list .career-list-inner>div{
+    position:absolute;
+    width: 100%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.sub-wrap .content ul li.career-list.ew{
+    background-image: url("../images/ew.gif");
+    background-color:#000;
+}
+.sub-wrap .content ul li.career-list p{
+    font-size:16px;
+}
+.sub-wrap .content ul li.career-list:nth-child(4n){
+    margin-right: 0;
+}
+.sub-wrap .content ul li.career-list h3{
+    font-size:16px;
+}
+.sub-wrap .content ul li.career-list h3 span{
+    display: inline-block;
+    font-size:13px;
+    color:#333;
+}
+.sub-wrap .content ul li.career-list p.work{
+    font-size:13px;
+}
+
+/* 모달 */
+.fade-enter-from,
+.fade-leave-to{
+    /* 시작시 효과 */
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active{
+    /* 전체 단계에서 적용될 부분*/
+    transition: all .2s;
+}
+
+.fade-enter-to,
+.fade-leave-from{
+    /* 끝나는 효과 */
+    opacity: 1;
+}
