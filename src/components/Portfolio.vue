@@ -6,15 +6,17 @@
             <div class="dot green"></div>
         </div>
         <div class="content">
-            <h2>career</h2>
+            <h2>Career</h2>
             <ul>
                 <li class="career-list" v-for="item in data.items" :key="item.name" :class="item.class">
-                    <div class="career-list-inner">
-                        <div>
-                            <h3>{{item.title}}</h3>
-                            <p class="dates">{{ item.dates }}</p>
+                    <router-link :to=item.class>
+                        <div class="career-list-inner">
+                            <div>
+                                <h3>{{item.title}}</h3>
+                                <p class="dates">{{ item.dates }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </router-link>
                 </li>
             </ul>
         </div>
@@ -34,28 +36,31 @@
                             dates: '2020. 03 ~ 2020. 12',
                             project: '웹디자인 유지보수',
                             work : '웹디자인 , 포토샵, 일러스트레이터, 플래쉬',
-                            src: ''
+                            class:'whole'
                         },
                         {
                             title: '용산집 ',
                             subtitle: '개발팀 사원',
                             dates: '2019. 06 ~ 2020. 02',
                             project: '웹디자인 유지보수',
-                            work : '웹디자인 , 포토샵, 일러스트레이터, 플래쉬'
+                            work : '웹디자인 , 포토샵, 일러스트레이터, 플래쉬',
+                            class: 'ysz'
                         },
                         {
                             title: '웹비즈',
                             subtitle: '디자인 사원(연구원)',
                             dates: '2017. 09 ~ 2019. 05',
                             project: '웹표준 및 반응형, 모바일 웹 앱 퍼블리싱작업, 건강보험공단 똑똑 건강 앱 퍼블리싱',
-                            work : 'HTML5, CSS3, CSS, Jquery'
+                            work : 'HTML5, CSS3, CSS, Jquery',
+                            class : 'webbizz',
                         },
                         {
                             title: '루브 ',
                             subtitle: '개발팀 사원',
                             dates: '2013. 07 ~ 2014. 10',
                             project: 'DDP(동대문 디자인 플라자)',
-                            work : 'HTML5, CSS3, CSS, Jquery'
+                            work : 'HTML5, CSS3, CSS, Jquery',
+                            class : 'luve',
                         },
                         {
                             title: '이와이드플러스',

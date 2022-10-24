@@ -33,7 +33,7 @@
                 data: {
                     items: [
                         {
-                            name: 'Safari',
+                            name: 'Career',
                             src: 'https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ddd826358438eda6d_safari.png',
                             path: '/Company'
                         },
