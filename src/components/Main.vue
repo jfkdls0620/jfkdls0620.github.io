@@ -5,7 +5,7 @@
                 <ul>
                     <!--          <li v-for="(item, index) in data.items" :key="item.name" ref="items" @mouseover="focus(item, data.items, index)" @mouseleave="icon(index)">-->
                     <li v-for="item in data.items" :key="item.name" ref="items">
-                        <div @click="isActive = true">
+                        <div @click="openModal(item)">
                             <div class="name">{{ item.name }}</div>
                             <img class="ico" :src="item.src" alt="">
                         </div>
@@ -14,24 +14,35 @@
             </div>
         </div>
         <transition name="fade" appear>
-            <ModalView v-if="isActive" @close="isActive=false"></ModalView>
+            <ModalView v-if="isActive" @close="isActive=false"/>
+        </transition>
+        <transition name="fade" appear>
+            <ModalInfo v-if="isInfo" @close="isInfo=false"/>
         </transition>
     </div>
 </template>
 
 <script>
     import ModalView from './Portfolio.vue';
+    import ModalInfo from './Info.vue';
 
     export default {
         name: "Main",
         components:{
-            ModalView
+            ModalView,
+            ModalInfo
         },
         data() {
             return {
+                isInfo : false,
                 isActive: false,
                 data: {
                     items: [
+                        {
+                            name: 'Info',
+                            src: 'https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853981255cc36b3a37af_finder.png',
+                            path: '/Company'
+                        },
                         {
                             name: 'Career',
                             src: 'https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853ddd826358438eda6d_safari.png',
@@ -42,6 +53,15 @@
             }
         },
         methods: {
+            openModal(item){
+                if(item.name === 'Career'){
+                    this.isActive = true;
+                    this.isInfo = false;
+                }else if(item.name === 'Info'){
+                    this.isInfo = true;
+                    this.isActive = false;
+                }
+            }
             // focus(item, items, idx){
             //   let el = this.$refs.items[idx];
             //

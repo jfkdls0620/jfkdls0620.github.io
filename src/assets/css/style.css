@@ -67,6 +67,7 @@
     left:50%;
     transform: translate(-50%, -50%);
 }
+
 .sub-wrap .outer{
     background: #b4b4b4;
     opacity: 0.9;
@@ -93,7 +94,7 @@
     position:absolute;
     font-size:14px;
     font-weight: bold;
-    line-height: 14px;
+    line-height: 11px;
     text-align:center;
     width: 15px;
     height: 15px;
@@ -122,8 +123,7 @@
     color: #e12121;
 }
 
-
-.sub-wrap .outer:hover .dot.red::after{
+.sub-wrap .outer:hover .dot::after{
     opacity: 1;
 
 }
@@ -162,6 +162,7 @@
     height: 225px;
     opacity: 0;
     transition: 0.2s;
+    cursor: pointer;
 }
 .sub-wrap .content ul li.career-list:hover .career-list-inner{
     opacity: 1;
@@ -214,11 +215,106 @@
     color:#fff;
 }
 
-.sub-bg{
-    height: 100%;
-    background-color: #202124
+.sub-wrap.sub-wrap_career{
+    width: auto;
+    overflow-y: auto;
 }
 
+.sub-wrap.sub-wrap_career .content{
+    padding: 10px 25px 60px 25px;
+}
+.sub-wrap.sub-wrap_career .content .content-inner-dl{
+    margin-top: 10px;
+}
+.sub-wrap.sub-wrap_career .content .content-inner-dl dt{
+    display: inline-block;
+    color:#666
+}
+.sub-wrap.sub-wrap_career .content .content-inner-dl dd{
+    display: inline-block;
+    color:#000;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.company-ul{
+    width:1024px;
+}
+.company-ul li{
+    display: inline-block;
+    margin:0 1% 10px 0;
+    width: 32%;
+    vertical-align: top;
+    position:relative;
+}
+.company-ul li a{
+    display: block;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:100%;
+    height: 225px;
+}
+
+.company-ul li dl{
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.company-ul li dt{font-size:18px;color:#000;margin-bottom: 7px}
+
+.company-ul.company-ul-ysz li a.img01{
+    background-image: url("../images/ysz/ysz01.png");
+}
+.company-ul.company-ul-ysz li a.img02{
+    background-image: url("../images/ysz/ysz02.png");
+}
+
+.company-ul.company-ul-web li a.img01{
+    background-image: url("../images/webbizz/web01.png");
+}
+
+.company-ul.company-ul-web li a.img02{
+    background-image: url("../images/webbizz/web02.png");
+}
+.company-ul.company-ul-web li a.img03{
+    background-image: url("../images/webbizz/web03.png");
+}
+.company-ul.company-ul-web li a.img04{
+    background-image: url("../images/webbizz/web04.png");
+}
+
+.company-ul.company-ul-web li a.img05{
+    background-image: url("../images/webbizz/web05.png");
+}
+.company-ul.company-ul-web li a.img06{
+    background-image: url("../images/webbizz/web06.png");
+}
+
+.sub-wrap.sub-info{
+    width: auto;
+    min-width:550px;
+}
+
+.btn-phone{
+    border:0;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color:#fff;
+    padding: 5px 15px;
+}
+
+.btn-apply{
+    width: 100%;
+    border:0;
+    border-radius: 5px;
+    padding: 5px 0;
+    background-color: #e1e1e1;
+    margin-top: 10px;
+}
+
+.btn-keyboard[data-v-0807fe44]{
+    background-color: #949494;
+}
 
 /* 모달 */
 .fade-enter-from,
