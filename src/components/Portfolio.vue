@@ -18,10 +18,10 @@
                 </li>
             </ul>
         </div>
+        <transition name="fade">
+            <ModalCareer v-if="isActiveModal" @close="isActiveModal=false" :item-data="itemData"></ModalCareer>
+        </transition>
     </div>
-    <transition name="fade" appear>
-        <ModalCareer v-if="isActiveModal" @close="isActiveModal=false" :item-data="itemData"></ModalCareer>
-    </transition>
 </template>
 
 <script>

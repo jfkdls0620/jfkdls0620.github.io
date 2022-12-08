@@ -141,6 +141,8 @@
 
 .sub-wrap .content ul{
     margin-top: 15px;
+    max-height:420px;
+    overflow-y:auto;
 }
 .sub-wrap .content ul li.career-list{
     text-align: center;
@@ -221,7 +223,7 @@
 }
 
 .sub-wrap.sub-wrap_career .content{
-    padding: 10px 25px 60px 25px;
+    padding: 10px 25px 20px 25px;
 }
 .sub-wrap.sub-wrap_career .content .content-inner-dl{
     margin-top: 10px;
@@ -316,6 +318,18 @@
     background-color: #949494;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+}
+
 /* 모달 */
 .fade-enter-from,
 .fade-leave-to{
@@ -334,3 +348,4 @@
     /* 끝나는 효과 */
     opacity: 1;
 }
+
