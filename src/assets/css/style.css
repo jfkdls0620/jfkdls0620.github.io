@@ -60,6 +60,10 @@
 }
 #container .doc-wrap .doc-wrap-inner ul li:hover .ico{margin-top: -20px}
 
+.nav-bar{
+    background-color:#949494;
+}
+
 .sub-wrap{
     position:absolute;
     width: 960px;
@@ -347,5 +351,41 @@
 .fade-leave-from{
     /* 끝나는 효과 */
     opacity: 1;
+}
+
+@media (max-width: 1024px){
+    .sub-wrap{
+        width: 100%;
+    }
+    .sub-wrap.sub-info {
+        width: auto;
+        min-width: 100%;
+    }
+    .sub-wrap.sub-wrap_career{
+        width: 100%;
+    }
+
+    #container .doc-wrap{
+        height:100vh;
+        position:relative;
+        left:0;
+        bottom:auto;
+        transform: none;
+    }
+    #container .doc-wrap .doc-wrap-inner ul{
+        background-color: transparent;
+        border:0;
+        backdrop-filter:none;
+        display: block;
+    }
+
+    #container .doc-wrap .doc-wrap-inner ul li{
+        display: inline-block;
+        width: 25%;
+    }
+    #container .doc-wrap .doc-wrap-inner ul li:hover .ico{margin-top: 0;opacity: .5}
+    #container .doc-wrap .doc-wrap-inner ul li:hover .name{
+        visibility: hidden;
+    }
 }
 
