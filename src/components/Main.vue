@@ -1,8 +1,5 @@
 <template>
     <div id="container">
-        <div class="nav-bar">
-            {{nowTime}}
-        </div>
         <div class="doc-wrap">
             <div class="doc-wrap-inner">
                 <ul>
@@ -33,7 +30,7 @@
         name: "Main",
         components:{
             ModalView,
-            ModalInfo
+            ModalInfo,
         },
         data() {
             return {
@@ -58,23 +55,29 @@
                         },
                     ],
                 },
-                nowTime: "00:00:00"
+
             }
-        },
-        created() {
-            this.nowTimes();
-            this.setDate();
-            setInterval(this.nowTimes.bind(this) , 1000);
         },
         methods: {
             openModal(item){
-                if(item.name === 'Career'){
-                    this.isActive = true;
-                    this.isInfo = false;
-                }else if(item.name === 'Info'){
-                    this.isInfo = true;
-                    this.isActive = false;
+                const screenWidth = screen.width;
+                if(screenWidth >= 1024){ //pc
+                    if(item.name === 'Career'){
+                        this.isActive = true;
+                        this.isInfo = false;
+                    }else if(item.name === 'Info'){
+                        this.isInfo = true;
+                        this.isActive = false;
+                    }
+                }else{
+                    if(item.name === 'Career'){
+                        this.$router.push('/portfolio')
+                    }else if(item.name === 'Info'){
+                        this.$router.push('/Info')
+                    }
+
                 }
+
             },
             openLink(src){
                 if(src.name === 'Instagram'){
@@ -82,19 +85,7 @@
                     openWindow.location.href = src.path;
                 }
             },
-            setDate(){
-                let hh =new Date().getHours() < 10? "0" + new Date().getHours(): new Date().getHours();
-                let mm =new Date().getMinutes() < 10? "0" + new Date().getMinutes(): new Date().getMinutes();
-                let ss =new Date().getSeconds() < 10? "0" + new Date().getSeconds(): new Date().getSeconds();
-                return {
-                     'hh' : hh
-                    , 'mm' : mm
-                    , 'ss' : ss
-                }
-            },
-            nowTimes() {
-                this.nowTime = this.setDate().hh + ":" + this.setDate().mm + ":" + this.setDate().ss;
-            }
+
 
         }
     }

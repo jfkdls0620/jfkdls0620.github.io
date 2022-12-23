@@ -32,6 +32,9 @@
                 <button class="btn-apply" @click="pwCkd()">확인</button>
             </div>
         </div>
+        <div class="bottom-bar">
+            <router-link to="/"></router-link>
+        </div>
     </div>
 </template>
 

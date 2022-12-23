@@ -12,10 +12,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faUserSecret);
 
-
 createApp(App).use(
     router,
 ).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
+
+
 
 
 

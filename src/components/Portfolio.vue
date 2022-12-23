@@ -18,6 +18,9 @@
                 </li>
             </ul>
         </div>
+        <div class="bottom-bar">
+            <router-link to="/"></router-link>
+        </div>
         <transition name="fade">
             <ModalCareer v-if="isActiveModal" @close="isActiveModal=false" :item-data="itemData"></ModalCareer>
         </transition>

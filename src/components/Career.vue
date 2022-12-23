@@ -1,6 +1,6 @@
 <template>
     <div class="sub-wrap sub-wrap_career">
-        <div class="outer yosemite">
+        <div class="outer yosemite" style="display: block">
             <div class="dot red" @click="$emit('close')"></div>
             <div class="dot amber"></div>
             <div class="dot green"></div>
