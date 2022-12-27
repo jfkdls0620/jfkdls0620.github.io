@@ -139,28 +139,6 @@
 }
 #container .doc-wrap .doc-wrap-inner ul li:hover .ico{margin-top: -20px}
 
-.nav-bar{
-    position:relative;
-    display: none;
-}
-.nav-bar::before{
-    content:"";
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    background-color: #1a1a1a;
-    opacity: .5;
-    z-index: 0;
-}
-.nav-bar .nav-bar_time{
-    position:relative;
-    color:#fff;
-    font-weight:500;
-    z-index: 10;
-}
-
 .sub-wrap{
     position:absolute;
     width: 960px;
@@ -393,6 +371,10 @@
     background-image: url("../images/webbizz/web06.png");
 }
 
+.nav-bar{
+    display:none;
+}
+
 .sub-wrap.sub-info{
     width: auto;
     min-width:550px;
@@ -468,117 +450,14 @@
     opacity: 1;
 }
 
-.bottom-bar{display: none}
-
-@media (max-width: 1024px){
-    .sub-wrap{
-        width: 100%;
-        height: calc(100% - 30px);
-        top:30px;
-        left:0;
-        transform: none;
-    }
-    .sub-wrap .content{
-        height: calc(100% - 55px);
-    }
-    .sub-wrap.sub-info {
-        width: auto;
-        min-width: 100%;
-    }
-    .sub-wrap.sub-wrap_career{
-        width: 100%;
-    }
-
-    .sub-wrap .outer{
-        display: none;
-    }
-    #container{
-        background: none;
-    }
-    #app{
-        background-image: url(/src/assets/background.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-    #container .doc-wrap{
-        height:100vh;
-        position:relative;
-        left:0;
-        bottom:auto;
-        transform: none;
-    }
-    #container .doc-wrap .doc-wrap-inner ul{
-        background-color: transparent;
-        border:0;
-        backdrop-filter:none;
-        display: block;
-    }
-
-    #container .doc-wrap .doc-wrap-inner ul li{
-        display: inline-block;
-        width: 25%;
-    }
-    #container .doc-wrap .doc-wrap-inner ul li:hover .ico{margin-top: 0;opacity: .5}
-    #container .doc-wrap .doc-wrap-inner ul li:hover .name{
-        visibility: hidden;
-    }
-
-    .nav-bar{
-        display: block;
-    }
-    .nav-bar::after{
-        content:"";
-        position:absolute;
-        top:0;
-        left:50%;
-        transform: translateX(-50%);
-        background-color: #000;
-        height: 30px;
-        width: 55%;
-        display: block;
-        border-radius: 0 0 15px 15px;
-    }
-    .nav-bar .nav-bar_time{
-        text-align: left;
-        line-height: 30px;
-        padding-left: 5%;
-    }
-
-    .sub-wrap .content ul{
-        padding:0;
-        max-height: 90%;
-        overflow-y: auto
-    }
-    .sub-wrap .content ul li.career-list{
-        width: 49%;
-        min-height: auto;
-        margin:0 2% 10px 0
-    }
-    .sub-wrap .content ul li.career-list:nth-child(2n){
-        margin-right: 0;
-    }
-    .sub-wrap .content ul li.career-list .career-list-inner{
-        padding-top: 100%;
-        height:auto;
-    }
-    .sub-wrap .content ul li.career-list.whole,
-    .sub-wrap .content ul li.career-list.webbizz{
-        background-size: 85% auto;
-    }
-    .bottom-bar{
-        display: block;
-        height: 55px;
-        background-color: #555655;
-    }
-    .bottom-bar a{
-        display: block;
-        width: 40px;
-        height: 55px;
-        background-image: url("../bottom_arrow.png");
-        background-size: 14px auto;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+.fadein-enter-active,
+.fadein-leave-active {
+    transition: all 0.5s ease;
+}
+.fadein-enter-from,
+.fadein-leave-to {
+    opacity: 0;
+    transform: scale(0.9);
 }
 
+.bottom-bar{display: none}

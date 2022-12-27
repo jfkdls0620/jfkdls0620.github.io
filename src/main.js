@@ -5,6 +5,7 @@ import router from './routes/index.js';
 
 import './assets/css/base.css';
 import './assets/css/style.css';
+import './assets/css/mobile.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons';

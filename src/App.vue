@@ -1,8 +1,19 @@
 <template>
     <div class="nav-bar">
         <div class="nav-bar_time">{{nowTime}}</div>
+        <div class="nav-data">
+            <div class="nav-data-inner">
+                <div class="nav-data_bar"></div>
+                <div class="nav-data_bar"></div>
+                <div class="nav-data_bar"></div>
+                <div class="nav-data_bar"></div>
+                <div class="nav-data_cell">5G</div>
+            </div>
+        </div>
     </div>
-    <router-view></router-view>
+    <transition name="fadein" mode="out-in">
+        <router-view></router-view>
+    </transition>
 </template>
 
 <script>
