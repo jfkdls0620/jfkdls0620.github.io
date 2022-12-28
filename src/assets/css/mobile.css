@@ -20,6 +20,7 @@
         left:50%;
         transform:translateX(-50%);
         height: auto;
+        border-radius: 10px;
     }
 
     .sub-wrap.sub-wrap_career .content{
@@ -189,6 +190,27 @@
     .sub-wrap .content ul li.career-list.webbizz{
         background-size: 85% auto;
     }
+    .sub-wrap .content ul.company-ul {
+        max-height: 370px;
+    }
+    .company-ul{
+        width: 100%;
+        overflow-x: hidden;
+
+    }
+
+    .company-ul li{
+        display: block;
+        width: 100%;
+    }
+    .sub-wrap.sub-wrap_career .content .content-inner-dl{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sub-wrap.sub-wrap_career .content .content-inner-dl dd{
+        font-size:15px;
+    }
+
     .bottom-bar{
         display: block;
         height: 55px;
@@ -203,5 +225,7 @@
         background-position: center;
         background-repeat: no-repeat;
     }
+
+
 }
 
