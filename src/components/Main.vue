@@ -8,7 +8,7 @@
                         <div @click="openModal(item)">
                             <div class="name">{{ item.name }}</div>
                             <img v-if="!item.chk" class="ico" :src="item.src" alt="" @click="openLink(item)">
-                            <img v-if="item.chk" src="../assets/images/insta_ico.png" alt="" @click="openLink(item)">
+                            <img v-if="item.chk" class="ico" src="../assets/images/insta_ico.png" alt="" @click="openLink(item)">
                         </div>
                     </li>
                 </ul>
