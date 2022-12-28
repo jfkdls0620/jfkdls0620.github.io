@@ -7,7 +7,8 @@
                     <li v-for="item in data.items" :key="item.name" ref="items">
                         <div @click="openModal(item)">
                             <div class="name">{{ item.name }}</div>
-                            <img class="ico" :src="item.src" alt="" @click="openLink(item)">
+                            <img v-if="!item.chk" class="ico" :src="item.src" alt="" @click="openLink(item)">
+                            <img v-if="item.chk" src="../assets/images/insta_ico.png" alt="" @click="openLink(item)">
                         </div>
                     </li>
                 </ul>
@@ -50,8 +51,9 @@
                         },
                         {
                             name: 'Instagram',
-                            src: '../src/assets/images/insta_ico.png',
-                            path: 'https://www.instagram.com/dh0620/'
+                            src: 'require(`@/assets/images/insta_ico.png`)',
+                            path: 'https://www.instagram.com/dh0620/',
+                            chk: 1,
                         },
                     ],
                 },
