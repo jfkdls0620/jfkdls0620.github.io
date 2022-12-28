@@ -50,7 +50,7 @@
                         },
                         {
                             name: 'Instagram',
-                            src: 'http://koreapenman.com/dev/insta_ico.png',
+                            src: '../src/assets/images/insta_ico.png',
                             path: 'https://www.instagram.com/dh0620/'
                         },
                     ],
