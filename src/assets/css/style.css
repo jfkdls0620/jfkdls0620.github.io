@@ -23,9 +23,16 @@
 .intro-container .intro-box .intro-box_inner .profile-img{
     width: 100px;
     height: 100px;
-    background: #0a53be;
+    background: #000;
     border-radius: 50%;
     margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.intro-container .intro-box .intro-box_inner .profile-img img{
+    width: 100%;
 }
 .intro-container .intro-box .intro-box_inner h1{
     text-align: center;
@@ -33,9 +40,14 @@
     font-size:20px;
     font-weight: 500;
     margin-top: 15px;
+    margin-bottom: 10px;
     text-shadow: 0 2px 4px #000;
 }
-
+.intro-container .intro-box .intro-box_inner .input-box {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
 .intro-container .intro-box .intro-box_inner .input-box input{
     border:0;
     border-radius: 5px;

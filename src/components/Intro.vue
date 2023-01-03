@@ -2,7 +2,7 @@
     <div class="intro-container">
         <div class="intro-box">
             <div class="intro-box_inner">
-                <div class="profile-img"></div>
+                <div class="profile-img"><img src="../assets/profile.gif" alt="프로필사진"></div>
                 <h1>김동현의 Portfolio</h1>
                 <div class="input-box">
                     <transition name="slide">
