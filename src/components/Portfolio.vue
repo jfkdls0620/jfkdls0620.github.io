@@ -1,25 +1,27 @@
 <template>
-    <div class="sub-wrap">
-        <div class="outer yosemite">
-            <div class="dot red" @click="$emit('close')"></div>
-            <div class="dot amber"></div>
-            <div class="dot green"></div>
-        </div>
-        <div class="content">
-            <h2>Career</h2>
-            <ul>
-                <li class="career-list" v-for="item in data.items" :key="item.name" :class="item.class">
-                    <div class="career-list-inner" @click="openModal(item)">
-                        <div>
-                            <h3>{{item.title}}</h3>
-                            <p class="dates">{{ item.dates }}</p>
+    <div class="flex-box">
+        <div class="sub-wrap">
+            <div class="outer yosemite">
+                <div class="dot red" @click="$emit('close')"></div>
+                <div class="dot amber"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="content">
+                <h2>Career</h2>
+                <ul>
+                    <li class="career-list" v-for="item in data.items" :key="item.name" :class="item.class">
+                        <div class="career-list-inner" @click="openModal(item)">
+                            <div>
+                                <h3>{{item.title}}</h3>
+                                <p class="dates">{{ item.dates }}</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="bottom-bar">
-            <router-link to="/"></router-link>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-bar">
+                <a href="javascript:;" @click="$emit('close')"></a>
+            </div>
         </div>
         <transition name="fade">
             <ModalCareer v-if="isActiveModal" @close="isActiveModal=false" :item-data="itemData"></ModalCareer>

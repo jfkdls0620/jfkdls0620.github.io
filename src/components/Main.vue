@@ -7,8 +7,7 @@
                     <li v-for="item in data.items" :key="item.name" ref="items">
                         <div @click="openModal(item)">
                             <div class="name">{{ item.name }}</div>
-                            <img v-if="item.isLink" class="ico" :src="item.src" alt="" @click="openLink(item)">
-                            <img v-else class="ico" :src="item.src" alt="" @click="openLink(item)">
+                            <img class="ico" :src="item.src" alt="" />
                         </div>
                     </li>
                 </ul>
@@ -54,13 +53,11 @@
                             name: 'Logout',
                             src: 'https://mhmdmhd6.github.io/Mac-OS-Desktop/icon/dock/preferences.png',
                             path: 'javascript:;',
-                            isLink: true,
                         },
                         {
                             name: 'Instagram',
                             src: instaIcon,
                             path: 'https://www.instagram.com/dh0620/',
-                            isLink: true,
                         },
                     ],
                 },
@@ -69,30 +66,16 @@
         },
         methods: {
             openModal(item){
-                const screenWidth = screen.width;
-                if(screenWidth >= 1024){ //pc
-                    if(item.name === 'Career'){
-                        this.isActive = true;
-                        this.isInfo = false;
-                    }else if(item.name === 'Info'){
-                        this.isInfo = true;
-                        this.isActive = false;
-                    }
-                }else{
-                    if(item.name === 'Career'){
-                        this.$router.push('/portfolio')
-                    }else if(item.name === 'Info'){
-                        this.$router.push('/Info')
-                    }
-
-                }
-
-            },
-            openLink(src){
-                if(src.name === 'Instagram'){
+                if(item.name === 'Career'){
+                    this.isActive = true;
+                    this.isInfo = false;
+                }else if(item.name === 'Info'){
+                    this.isInfo = true;
+                    this.isActive = false;
+                }else if(item.name === 'Instagram'){
                     const openWindow = window.open("about:blank");
-                    openWindow.location.href = src.path;
-                } else if (src.name === 'Logout') {
+                    openWindow.location.href = item.path;
+                } else if (item.name === 'Logout') {
                     localStorage.clear();
                     this.$router.replace('/');
                 }

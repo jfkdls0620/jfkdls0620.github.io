@@ -25,9 +25,9 @@
 </template>
 
 <script>
-
     export default {
         name: "Intro",
+
         data(){
             return{
                 isPwd : false,
