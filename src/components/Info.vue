@@ -22,13 +22,12 @@
             </dl>
             <div class="number-area" v-if="isNumberPad">
                 <input
-                        type="text"
+                        type="password"
                         class="form-control"
                         v-model="value"
                         id="txtBox"
                         placeholder="Press any button"
                 />
-                <Keyboard @pressed="value = $event" :selfValue="value"/>
                 <button class="btn-apply" @click="pwCkd()">확인</button>
             </div>
         </div>
@@ -39,13 +38,9 @@
 </template>
 
 <script>
-    import Keyboard from '../components/keyboard.vue';
 
     export default {
         name: "Info",
-        components:{
-            Keyboard,
-        },
         data(){
             return{
                 value : '',
@@ -59,7 +54,7 @@
                 this.isNumberPad ? this.isNumberPad = false : this.isNumberPad = true;
             },
             pwCkd(){
-                if(this.value === '0620'){
+                if(this.value === localStorage.getItem('portfolio_pwd')){
                     this.isCkd = true;
                     this.pwd = '010-5032-7267'
                     this.isNumberPad = false

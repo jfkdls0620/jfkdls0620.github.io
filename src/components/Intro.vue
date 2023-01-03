@@ -11,8 +11,8 @@
                             v-model="value"
                             placeholder="Your Password"
                             autocomplete="off"
-                            @input="inputChange(value)"
-                            @keyup.enter="onSubmit(value)"
+                            @input="inputChange()"
+                            @keyup.enter="onSubmit()"
                         />
                     </transition>
                     <transition name="fade2">
@@ -35,16 +35,21 @@
             }
         },
         methods:{
-            inputChange(val){
-                val ? this.isPwd = true : this.isPwd = false;
+            inputChange(){
+                this.value ? this.isPwd = true : this.isPwd = false;
             },
-            onSubmit(val){
-                console.log(this.$store.state.name);
-                if(!val){
+            onSubmit(){
+                if(!this.value){
                     alert("패스워드를 입력해주세요.");
                 }else{
-
+                    localStorage.setItem('portfolio_pwd', this.value)
+                    this.$router.replace('/main')
                 }
+            }
+        },
+        created() {
+            if(localStorage.getItem('portfolio_pwd')){
+                this.$router.replace('/main')
             }
         }
     }

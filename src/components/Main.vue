@@ -7,8 +7,8 @@
                     <li v-for="item in data.items" :key="item.name" ref="items">
                         <div @click="openModal(item)">
                             <div class="name">{{ item.name }}</div>
-                            <img v-if="!item.chk" class="ico" :src="item.src" alt="" @click="openLink(item)">
-                            <img v-if="item.chk" class="ico" src="../assets/images/insta_ico.png" alt="" @click="openLink(item)">
+                            <img v-if="item.isLink" class="ico" :src="item.src" alt="" @click="openLink(item)">
+                            <img v-else class="ico" :src="item.src" alt="" @click="openLink(item)">
                         </div>
                     </li>
                 </ul>
@@ -26,6 +26,7 @@
 <script>
     import ModalView from './Portfolio.vue';
     import ModalInfo from './Info.vue';
+    import instaIcon from '../assets/images/insta_ico.png';
 
     export default {
         name: "Main",
@@ -50,10 +51,16 @@
                             path: 'javascript:;'
                         },
                         {
+                            name: 'Logout',
+                            src: 'https://mhmdmhd6.github.io/Mac-OS-Desktop/icon/dock/preferences.png',
+                            path: 'javascript:;',
+                            isLink: true,
+                        },
+                        {
                             name: 'Instagram',
-                            src: 'require(`@/assets/images/insta_ico.png`)',
+                            src: instaIcon,
                             path: 'https://www.instagram.com/dh0620/',
-                            chk: 1,
+                            isLink: true,
                         },
                     ],
                 },
@@ -85,10 +92,11 @@
                 if(src.name === 'Instagram'){
                     const openWindow = window.open("about:blank");
                     openWindow.location.href = src.path;
+                } else if (src.name === 'Logout') {
+                    localStorage.clear();
+                    this.$router.replace('/');
                 }
             },
-
-
         }
     }
 </script>

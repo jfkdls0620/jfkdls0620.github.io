@@ -8,9 +8,10 @@ import Ew from '../components/Career.vue'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: Home },
+        { path: '/', component: Intro },
+        { path: '/main', component: Home },
         { path: '/portfolio', component: Portfolio },
-        { path: '/Info', component: Info },
+        { path: '/info', component: Info },
         { path: '/ew', component: Ew },
     ]
 })
