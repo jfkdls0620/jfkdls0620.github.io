@@ -6,7 +6,7 @@ import Info from '../components/Info.vue'
 import Ew from '../components/Career.vue'
 
 const router = createRouter({
-    history: createWebHistory(),
+    // history: createWebHistory(),
     routes: [
         { path: '/', component: Intro },
         { path: '/main', component: Home },
