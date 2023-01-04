@@ -1,9 +1,9 @@
-#app{width:100%;height: 100vh}
+#app{width:100%;height: 100%}
 
 .intro-container{
     position:relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url("../background.jpg");
     background-size: cover;
     background-position: center;
@@ -91,7 +91,7 @@
     background-size: 26px auto;
 }
 
-#container{position:relative;width:100%;height:100vh;background-image: url("../background.jpg");background-repeat: no-repeat;background-position: center;background-size: cover;}
+#container{position:relative;width:100%;height:100%;background-image: url("../background.jpg");background-repeat: no-repeat;background-position: center;background-size: cover;}
 #container .doc-wrap{position:absolute;
     bottom:20px;
     left:50%;
