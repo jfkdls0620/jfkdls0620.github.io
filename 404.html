@@ -27,9 +27,11 @@
       // Otherwise, leave segmentCount as 0.
       var segmentCount = 1;
 
-      var l = window.location;
-      var pathname = window.location.pathname
-      l.replace('/jfkdls0620.github.io/' + pathname)
+      var redirectUrl = window.location.origin + '/jfkdls0620.github.io/' + window.location.pathname + window.location.search;
+      window.location.replace(redirectUrl);
+
+      // var pathname = window.location.pathname
+      // l.replace('/jfkdls0620.github.io/' + pathname)
       // l.replace(
       //         l.protocol + '//' + l.hostname + (l.port ?   ':' + l.port : '') +
       //         l.pathname.split('/').slice(0, 1 +  segmentCount).join('/') + '/?p=/' +
